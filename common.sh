@@ -9,6 +9,8 @@ Y="\e[33m"
 N="\e[0m"
 START_TIME=$(date +%s)
 
+mkdir -p $LOGS_FOLDER
+
 echo "$(date "+%Y-%m-%d %H:%M:%S") | Script started executing at: $(date)" | tee -a $LOGS_FILE
 
 check_root(){
@@ -17,8 +19,6 @@ check_root(){
         exit 1
     fi
 }
-
-mkdir -p $LOGS_FOLDER
 
 VALIDATE(){
     if [ $1 -ne 0 ]; then
